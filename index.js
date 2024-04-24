@@ -5,20 +5,26 @@ const app = express();
 app.use(express.json());
 
 // Connection to database
-// require('./db/connection');
-// const Users = require('./Model/User');
+require('./db/connection');
 
-// POST route to handle incoming data
-// app.post("/", async (req, res) => {
-//     let user = new Users(req.body);
-//     let result = await user.save();
-//     res.send(result);
-// });
+
+app.post("/addHotel", async (req, res) => {
+    const hotelData = req.body;
+
+    try {
+        const newHotel = new UserModal(hotelData);
+        await newHotel.save();
+        res.json(newHotel);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Erreur lors de l'ajout des données de l'hôtel");
+    }
+});
 
 // Create GET request
-app.get("/", (req, res) => {
-    res.send("Express on Vercel");
-  });
+// app.get("/", (req, res) => {
+//     res.send("Express on Vercel");
+//   });
 
 // Initialize server
 app.listen(5000, () => {

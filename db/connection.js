@@ -5,3 +5,4 @@ console.log("Connected to Database");
 }).catch((err) => {
     console.log("Not Connected to Database ERROR! ", err);
 });
+module.exports = mongoose;
