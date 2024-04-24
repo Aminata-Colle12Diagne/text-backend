@@ -5,8 +5,8 @@ const app = express();
 app.use(express.json());
 
 // Connection to database
-require('./db/connection');
-const Users = require('./Model/User');
+// require('./db/connection');
+// const Users = require('./Model/User');
 
 // POST route to handle incoming data
 // app.post("/", async (req, res) => {
