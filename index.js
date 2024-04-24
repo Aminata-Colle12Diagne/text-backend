@@ -9,11 +9,16 @@ require('./db/connection');
 const Users = require('./Model/User');
 
 // POST route to handle incoming data
-app.post("/", async (req, res) => {
-    let user = new Users(req.body);
-    let result = await user.save();
-    res.send(result);
-});
+// app.post("/", async (req, res) => {
+//     let user = new Users(req.body);
+//     let result = await user.save();
+//     res.send(result);
+// });
+
+// Create GET request
+app.get("/", (req, res) => {
+    res.send("Express on Vercel");
+  });
 
 // Initialize server
 app.listen(5000, () => {
