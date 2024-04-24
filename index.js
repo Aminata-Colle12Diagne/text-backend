@@ -16,9 +16,9 @@ app.post("/", async (req, res) => {
 });
 
 // Create GET request
-app.get("/", (req, res) => {
-  res.send("Express on Vercel");
-});
+// app.get("/", (req, res) => {
+//   res.send("Express on Vercel");
+// });
 
 // ajout hotel
 // app.post("/addHotel", async (req, res) => {
